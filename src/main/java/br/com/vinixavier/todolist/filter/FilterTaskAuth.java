@@ -65,6 +65,11 @@ public class FilterTaskAuth extends OncePerRequestFilter {
 
                 // variavel booleana que retorna true ou false
                 if (passwordVerify.verified) {
+
+                    /*Esse setAtribute recebe um nome do atributo,  nesse caso eu vou settar um atributo chamado Iduser com o valor
+                     * do meu id
+                    */
+                    request.setAttribute("idUser", user.getId());
                     // SEGUE VIAGEM
                     filterChain.doFilter(request, response);
                 } else {
